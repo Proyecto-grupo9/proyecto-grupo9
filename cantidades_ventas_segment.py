@@ -15,6 +15,12 @@ def cantidades_ventas_segment(list:list(list)):
     cantidad_ventas_consumer = 0
     cantidad_ventas_corporate = 0
     cantidad_ventas_homeoffice = 0
+    '''
+    Hacemos un bucle for para que, cada vez que encuentre en la columna 2 "Consumer",
+    "Corporate" o "Home Office", aumente el valor de sus cantidades segun lo que diga
+    la columna 11, lo cual es un string estrictamente numero, por lo tanto, convertimos
+    el string en un int.
+    '''
 
     for l in list:
         if l[1] == "Consumer":
