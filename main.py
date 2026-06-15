@@ -13,8 +13,11 @@ def main()
     print(cantidades_ventas_segment(leer_archivo()))
     #Resolucion pregunta 3
     estado_x = input("Ingrese un estado de USA: \n")
-    print(resolucion_pregunta3(leer_archivo(), estado_x))
+    print(cantidades_envio_estado(leer_archivo(), estado_x))
 
 
 
     return 0
+
+if __name__ == "__main__":
+    main()
