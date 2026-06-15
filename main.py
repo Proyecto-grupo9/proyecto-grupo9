@@ -1,5 +1,5 @@
 #Importamos el codigo principal
-import proyecto.py
+import proyecto
 
 
 def main():
