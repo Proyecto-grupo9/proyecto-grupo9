@@ -8,7 +8,7 @@ import cantidades_ventas_segment
 import resolucion_pregunta3
 
 
-def main()
+def main():
     #Resolucion pregunta 6
     print(cantidades_ventas_segment(leer_archivo()))
     #Resolucion pregunta 3
