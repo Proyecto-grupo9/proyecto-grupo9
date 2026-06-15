@@ -1,11 +1,5 @@
-#Importamos el dataset
-import leer_archivo
-
-#Importamos los archivos de la resolucion de la pregunta 6
-import cantidades_ventas_segment
-
-#Importamos los archivos de la resolucion de la pregunta 3
-import resolucion_pregunta3
+#Importamos el codigo principal
+import proyecto.py
 
 
 def main():
