@@ -5,23 +5,21 @@ import csv
 def leer_archivo():
     
     '''
-    filas : list[str]
-    la funcion toma el archivo con extension csv y lo representa como una lista de filas
-    cada fila es una lista de strings, donde cada elemento corresponde a una columna del data-set
+    fila : list[str]
+    la funcion toma el archivo con extension csv y lo representa como una lista de filas,
+    cada fila es una lista de strings, donde cada elemento corresponde a una columna del data-set.
     '''
     data_base = open("SampleSuperstore_geo.csv")
     lista = []
-    for linea in data_base:
+    for fila in data_base:
 
-        lista.append(linea.strip("\n").split(","))
+        fila.append(fila.strip("\n").split(","))
         
         
 
     data_base.close()
     return lista
 
-
-leer_archivo()
 
 
 # Funciones resolucion pregunta 6
@@ -43,7 +41,7 @@ def cantidades_ventas_segment(list:list(list)):
     '''
     Hacemos un bucle for para que, cada vez que encuentre en la columna 2 "Consumer",
     "Corporate" o "Home Office", aumente el valor de sus cantidades segun lo que diga
-    la columna 11, lo cual es un string estrictamente numero, por lo tanto, convertimos
+    la columna 11, lo cual es un string estrictamente numérico, por lo tanto, convertimos
     el string en un int.
     '''
 
