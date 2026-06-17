@@ -1,5 +1,6 @@
 #Importamos el codigo principal
-from proyecto import *
+from leer_archivo import *
+
 
 
 def main():
