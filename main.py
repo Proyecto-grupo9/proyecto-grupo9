@@ -1,5 +1,7 @@
 #Importamos el codigo principal
 from leer_archivo import *
+from resolucion_pregunta3 import *
+from resolucion_pregunta6 import *
 
 
 
