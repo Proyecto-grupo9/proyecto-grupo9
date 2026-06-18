@@ -6,8 +6,16 @@ from resolucion_pregunta6 import *
 
 
 def main():
-    st.title
-    estado_x = input("Ingrese un estado: \n")
-    print(cantidades_envio_estado(leer_archivo(),estado_x))
+    '''
+    Estamos teniendo complicaciones en cuanto a usar streamlit, tanto para el grafico de torta, como
+    para el mapa. Intentamos buscar en la documentacion, pero no encontramos solucion. Sin embargo, 
+    las funciones deberian funcionar correctamente, lo que nos faltaria es controlar la salida y 
+    entrada de datos por el main, y la elaboracion de la pagina.
+
+    '''
+
+    #st.title
+    #estado_x = input("Ingrese un estado: \n")
+    #print(cantidades_envio_estado(leer_archivo(),estado_x))
 
     return 0
