@@ -15,6 +15,7 @@ def leer_archivo()->list:
         filas.append(linea.strip("\n").split(","))
 
     data_set.close()
-    return filas
+    #Eliminamos la primera fila para evitar errores de tipo.
+    return filas[1:]
 
 
