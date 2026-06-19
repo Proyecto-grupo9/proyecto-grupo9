@@ -13,9 +13,8 @@ def main():
     entrada de datos por el main, y la elaboracion de la pagina.
 
     '''
-
-    #st.title
-    #estado_x = input("Ingrese un estado: \n")
-    #print(cantidades_envio_estado(leer_archivo(),estado_x))
+    archivo_csv = leer_archivo()[1:9995]
+    
+    
 
     return 0
