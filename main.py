@@ -13,7 +13,7 @@ def main():
     entrada de datos por el main, y la elaboracion de la pagina.
 
     '''
-    archivo_csv = leer_archivo()[1:9995]
+    archivo_csv = leer_archivo()
     
     
 
