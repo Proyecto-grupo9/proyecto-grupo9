@@ -2,6 +2,7 @@
 from leer_archivo import *
 from resolucion_pregunta3 import *
 from resolucion_pregunta6 import *
+from resolucion_pregunta2 import *
 import streamlit as st
 
 
@@ -16,16 +17,28 @@ def main():
 
     '''
     archivo_csv = leer_archivo()
+    #pregunta 2
+    st.subheader("2. El Estado que mas paquetes recibió")
+    nombre_valor = estado_que_mas_recibio(estados_paquetes(archivo_csv))
+    nombre_estado =nombre_valor[0]
+    valor_estado = nombre_valor[1]
+    coordenadas_pregunta2 = lat_lon_estado(archivo_csv,nombre_estado)
+    coordenadas_pregunta2["color"] = ["#FF0000"]
+    st.map(coordenadas_pregunta2, latitude="lat", longitude="lon", color="color")
+    
+    
+
     #pregunta 3
     st.subheader("3. Tipos de envio por estado")
-    estado = st.selectbox("Seleccione un estado: ", lista_estados_disponibles(archivo_csv))
-
-    mostrar_estado = lat_lon_estado(archivo_csv, estado)
+    estado_pregunta3 = st.selectbox("Seleccione un estado: ", lista_estados_disponibles(archivo_csv))
+    
+    mostrar_estado = lat_lon_estado(archivo_csv, estado_pregunta3)
     mostrar_estado["color"] = ["#FFA500"]
 
     st.map(mostrar_estado, latitude = "lat", longitude = "lon", color = "color")
 
-    st.table(contar_envios(archivo_csv,estado))
+    st.table(contar_envios(archivo_csv,estado_pregunta3))
+    
     
     
 

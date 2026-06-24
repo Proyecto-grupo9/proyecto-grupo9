@@ -16,5 +16,5 @@ def estado_que_mas_recibio(cantidades_estados):
         if cantidades_estados[clave] > valor:
             valor = cantidades_estados[clave]
             estado = clave
-    return {estado:valor}
+    return [estado, valor]
 
