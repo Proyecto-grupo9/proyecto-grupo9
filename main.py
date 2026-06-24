@@ -22,6 +22,9 @@ def main():
     nombre_valor = estado_que_mas_recibio(estados_paquetes(archivo_csv))
     nombre_estado =nombre_valor[0]
     valor_estado = nombre_valor[1]
+
+    st.success(f"El estado que mas paquetes recibio es **{nombre_estado}** con un total de **{valor_estado}** paquetes recibidos.")
+
     coordenadas_pregunta2 = lat_lon_estado(archivo_csv,nombre_estado)
     coordenadas_pregunta2["color"] = ["#FF0000"]
     st.map(coordenadas_pregunta2, latitude="lat", longitude="lon", color="color")
