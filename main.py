@@ -1,9 +1,11 @@
 #Importamos el codigo principal
 from leer_archivo import *
-from resolucion_pregunta3 import *
-from resolucion_pregunta6 import *
+
 from resolucion_pregunta2 import *
+from resolucion_pregunta3 import *
 from resolucion_pregunta4 import *
+
+from resolucion_pregunta6 import *
 import streamlit as st
 
 
@@ -53,6 +55,14 @@ def main():
     
     st.metric(label="ciudad con más ventas", value= str(ciudad_mayor_venta[0]), delta=str(ciudad_mayor_venta[1]))
     
+
+    #PREGUNTA 6:
+
+    st.title("VENTAS POR SEGMENTOS")
+    grafico_torta = genera_grafico(archivo_csv)
+    st.pyplot(grafico_torta)
+
+    return 0
     
 
     return 0
