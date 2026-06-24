@@ -1,6 +1,11 @@
 def mayor_el_lista(lista:list)->int:
     '''
-    Dada una lista de numeros enteros, retorna el mayor elemento
+    La función recibe una lista de numeros enteros y retorna el mayor elemento.
+    Diseñamos esta función para que dada una lista, nos devuelva el mayor elemento de la misma.
+    Ejemplos:
+    test_mayor_el_lista( ):
+    test_mayor_el_lista( ):
+    test_mayor_el_lista( ):
     '''
     mayor = 0
     for elemento in list:
@@ -11,7 +16,15 @@ def mayor_el_lista(lista:list)->int:
 
 def contador_subcategoria_furniture(data_base:dict)-> int:
     '''
-
+    La función recibe un database y devuelve la cantidad de ventas de cada una de las subcategorías de la
+    categoría Furniture.
+    Esta función se va a usar para saber con exactitud cuantas ventas se realizaron de cada una de las subcategorías
+    (bookcases, chairs, tables y furnishings) de la categoría Furniture, para luego conocer cuál fue la que tuvo más
+    ventas.
+    Ejemplos:
+    contador_subcategoria_furniture( ):
+    contador_subcategoria_furniture( ):
+    contador_subcategoria_furniture( ):
     '''
     contador_bookcases : int = 0
     contador_chairs : int = 0
@@ -33,7 +46,15 @@ def contador_subcategoria_furniture(data_base:dict)-> int:
 
 def def contador_subcategoria_technology(data_base:dict)-> int:
     '''
-    
+    La función recibe un database y devuelve la cantidad de ventas de cada una de las subcategorías de la
+    categoría Technology.
+    Esta función se va a usar para saber con exactitud cuantas ventas se realizaron de cada una de las subcategorías
+    (phones y accessories) de la categoría Technology, para luego conocer cuál fue la que tuvo más
+    ventas.
+    Ejemplos:
+    contador_subcategoria_technology( ):
+    contador_subcategoria_technology( ):
+    contador_subcategoria_technology( ):
     '''
     contador_phones : int = 0
     contador_accessories : int = 0
@@ -50,7 +71,15 @@ def def contador_subcategoria_technology(data_base:dict)-> int:
 
 def contador_subcategoria_officesupplies(data_base:dict)-> int:
     '''
-
+    La función recibe un database y devuelve la cantidad de ventas de cada una de las subcategorías de la
+    categoría Office Supplies.
+    Esta función se va a usar para saber con exactitud cuantas ventas se realizaron de cada una de las subcategorías
+    (storage, art, labels, binders, appliances, paper, envelopes y fasteners) de la categoría Office Supplies, para luego 
+    conocer cuál fue la que tuvo más ventas.
+    Ejemplos:
+    contador_subcategoria_officesupplies( ):
+    contador_subcategoria_officesupplies( ):
+    contador_subcategoria_officesupplies( ):
     '''
     contador_storage : int = 0
     contador_art : int = 0
@@ -85,8 +114,17 @@ def contador_subcategoria_officesupplies(data_base:dict)-> int:
 
 def mayor_subcategoria(categoria:str,data_base:dict):
     '''
-    falta modificar para que diga que subcategoria es la mas vendida,
-    ahora devuelve solo la cantidad
+    La función recibe una categoría y un database y devuelve la cantidad de ventas de la subcategoría más vendida
+    de una categoría específica (un número entero) y también devuelve el nombre de la misma (string).
+    Esta función fue hecha para que, dado un diccionario, devuelva cuantas ventas hubo de, y cuál es, la 
+    subcategoría más vendida de una categoría elegida.
+    Ejemplos:
+    test_mayor_subcategoria( ):
+    test_mayor_subcategoria( ):
+    test_mayor_subcategoria( ):
+
+    (falta modificar para que diga que subcategoria es la mas vendida,
+    ahora devuelve solo la cantidad)
     '''
     retorno = 0
     if categoria == "Furniture":
