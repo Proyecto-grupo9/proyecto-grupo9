@@ -1,10 +1,11 @@
 #Importamos el codigo principal
 from leer_archivo import *
 
+from resolucion_pregunta1 import *
 from resolucion_pregunta2 import *
 from resolucion_pregunta3 import *
 from resolucion_pregunta4 import *
-
+from resolucion_pregunta5 import *
 from resolucion_pregunta6 import *
 import streamlit as st
 
