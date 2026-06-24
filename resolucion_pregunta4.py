@@ -18,6 +18,9 @@ def diccionario_ciudad(dataset):
     return ciudades
 
 def mayor_sales(dict):
+    '''
+
+    '''
     ventas = 0
 
     for city in dict:
@@ -27,6 +30,9 @@ def mayor_sales(dict):
     return (mayor_ciudad,ventas)
 
 def ganancias_region(dataset):
+    '''
+
+    '''
     ganancias = {}
     
     for clave in data_set:
