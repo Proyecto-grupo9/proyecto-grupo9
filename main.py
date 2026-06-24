@@ -2,7 +2,7 @@
 from leer_archivo import *
 from resolucion_pregunta3 import *
 from resolucion_pregunta6 import *
-import stramlit as st
+import streamlit as st
 
 
 
