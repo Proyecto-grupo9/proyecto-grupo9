@@ -3,6 +3,7 @@ from leer_archivo import *
 from resolucion_pregunta3 import *
 from resolucion_pregunta6 import *
 from resolucion_pregunta2 import *
+from resolucion_pregunta4 import *
 import streamlit as st
 
 
@@ -41,7 +42,16 @@ def main():
     st.map(mostrar_estado, latitude = "lat", longitude = "lon", color = "color")
 
     st.table(contar_envios(archivo_csv,estado_pregunta3))
+
+    #pregunta 4
+    st.subheader("4. Ganancias totales de cada region y ciudad que mas ventas realizó")
+
+    ganancias_pregunta4= ganancias(archivo_csv)
+
+    st.bar_chart(ganancias_pregunta4)
+    ciudad_mayor_venta = mayor_sales(diccionario_ciudad(archivo_csv))
     
+    st.metric(label="ciudad con más ventas", value= str(ciudad_mayor_venta[0]), delta=str(ciudad_mayor_venta(1)))
     
     
 
