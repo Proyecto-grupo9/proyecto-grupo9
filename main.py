@@ -23,15 +23,15 @@ def main():
     # PREGUNTA 1:
     st.title("PAQUETES ENVIADOS Y GANANCIA POR CIUDAD")
 
-    accion = st.menu_button("Selecciona una ciudad",options=ciudades(database))
+    accion = st.menu_button("Selecciona una ciudad",options=ciudades(archivo_csv))
     
-    cantidad_de_paquetes,ganancias = ventas_ganancias(accion,database)
+    cantidad_de_paquetes,ganancias = ventas_ganancias(accion,archivo_csv)
 
-    gannacias_paquetes = {
+    tabla = {
     "Paquetes enviados":[cantidad_de_paquetes],
-    "Ganancia":[ganancia]
+    "Ganancia":[ganancias]
     }
-    st.table(ganancias_paquetes)
+    st.table(tabla)
 
 
     # --------------------------------------------------------------
