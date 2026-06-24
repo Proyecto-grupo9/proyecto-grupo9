@@ -5,6 +5,7 @@ def paquetes_por_estado(estado : str,diccionario : dict)->int:
     y la cantidad de los mismos (un número entero).
     Hicimos esta función para determinar cuáles, de entre los 50 Estados de USA, fueron los tres que más paquetes
     recibieron y cuántos fueron.
+    Ejemplos:
     test_paquetes_por_estado( ):
     test_paquetes_por_estado( ):
     test_paquetes_por_estado( ):
