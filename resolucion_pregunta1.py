@@ -8,9 +8,9 @@ def ventas_ganancias(ciudad:str,data_base:dict)->tuple:
     Esta función se diseñó para calcular las ventas destinadas a una ciudad
     específica y las ganancias que generaron las mismas.
     Ejemplos;
-    ventas_ganancias( ):
-    ventas_ganancias( ):
-    vebtas_ganabcias( ):
+    test_ventas_ganancias( ):
+    test_ventas_ganancias( ):
+    test_ventas_ganabcias( ):
     '''
     contador_quantity : int = 0
     ganancias : int = 0
