@@ -46,7 +46,7 @@ def main():
     #pregunta 4
     st.subheader("4. Ganancias totales de cada region y ciudad que mas ventas realizó")
 
-    ganancias_pregunta4= ganancias(archivo_csv)
+    ganancias_pregunta4= ganancias_region(archivo_csv)
 
     st.bar_chart(ganancias_pregunta4)
     ciudad_mayor_venta = mayor_sales(diccionario_ciudad(archivo_csv))
