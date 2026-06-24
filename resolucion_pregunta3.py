@@ -26,3 +26,28 @@ def contar_envios(database, estado):
         
     return cantidades
 
+def lista_estados_disponibles(database):
+    estados_disponibles= []
+    for clave in database:
+        fila = database[clave]
+        state = fila["State"]
+        if state not in estados_disponibles:
+            estados_disponibles.append(state)
+    return estados_disponibles
+
+def lat_lon_estado(database,estado):
+    coordenadas ={}
+    for clave in database:
+        fila = database[clave]
+        state = fila["State"]
+        
+        if state == estado:
+            longitud = float(fila["Longitude"])
+            latitud = float(fila["Latitude"])
+            
+            coordenadas["lat"] = [latitud]
+            coordenadas["lon"] = [longitud]
+            break
+
+    return coordenadas
+

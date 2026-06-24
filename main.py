@@ -2,6 +2,8 @@
 from leer_archivo import *
 from resolucion_pregunta3 import *
 from resolucion_pregunta6 import *
+import stramlit as st
+
 
 
 
@@ -14,7 +16,18 @@ def main():
 
     '''
     archivo_csv = leer_archivo()
+    #pregunta 3
+    estado = st.selectbox("Seleccione un estado: ", lista_estados_disponibles(archivo_csv))
+
+    mostrar_estado = lat_lon_estado(archivo_csv, estado)
+    mostrar_estado["color"] = ["#FFA500"]
+
+    st.map(mostrar_estado, latitude = "lat", longitude = "lon", color = "color")
+
+    st.table(contar_envios(archivo_csv,estado))
     
     
 
     return 0
+if __name__ == '__main__':
+    main()
