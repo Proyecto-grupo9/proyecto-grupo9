@@ -51,7 +51,7 @@ def main():
     st.bar_chart(ganancias_pregunta4)
     ciudad_mayor_venta = mayor_sales(diccionario_ciudad(archivo_csv))
     
-    st.metric(label="ciudad con más ventas", value= str(ciudad_mayor_venta[0]), delta=str(ciudad_mayor_venta(1)))
+    st.metric(label="ciudad con más ventas", value= str(ciudad_mayor_venta[0]), delta=str(ciudad_mayor_venta[1]))
     
     
 
