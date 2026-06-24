@@ -20,7 +20,9 @@ def main():
 
     '''
     archivo_csv = leer_archivo()
-    #pregunta 2
+
+
+    # PREGUNTA 2
     st.subheader("2. El Estado que mas paquetes recibió")
     nombre_valor = estado_que_mas_recibio(estados_paquetes(archivo_csv))
     nombre_estado =nombre_valor[0]
@@ -33,8 +35,7 @@ def main():
     st.map(coordenadas_pregunta2, latitude="lat", longitude="lon", color="color")
     
     
-
-    #pregunta 3
+    # PREGUNTA 3
     st.subheader("3. Tipos de envio por estado")
     estado_pregunta3 = st.selectbox("Seleccione un estado: ", lista_estados_disponibles(archivo_csv))
     
@@ -45,7 +46,8 @@ def main():
 
     st.table(contar_envios(archivo_csv,estado_pregunta3))
 
-    #pregunta 4
+
+    # PREGUNTA 4
     st.subheader("4. Ganancias totales de cada region y ciudad que mas ventas realizó")
 
     ganancias_pregunta4= ganancias_region(archivo_csv)
@@ -55,6 +57,17 @@ def main():
     
     st.metric(label="ciudad con más ventas", value= str(ciudad_mayor_venta[0]), delta=str(ciudad_mayor_venta[1]))
     
+
+    # PREGUNTA 5:
+    st.title("SUBCATEGORIA MAS VENDIDA")
+    
+    subcategoria = st.radio(
+        "Selecciona una categoria:",
+        ["Furniture","Technology","Office Supplies"]
+    )
+
+    st.write(mayor_subcategoria(subcategoria,leer_archivo()))
+
 
     #PREGUNTA 6:
 
