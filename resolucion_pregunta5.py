@@ -44,7 +44,7 @@ def contador_subcategoria_furniture(data_base:dict)-> int:
 
     return mayor_el_lista(lista_de_contadores)
 
-def def contador_subcategoria_technology(data_base:dict)-> int:
+def contador_subcategoria_technology(data_base:dict)-> int:
     '''
     La función recibe un database y devuelve la cantidad de ventas de cada una de las subcategorías de la
     categoría Technology.
