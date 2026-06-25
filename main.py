@@ -22,7 +22,7 @@ def main():
     # --------------------------------------------------------------
     st.title("Proyecto Superstore Norteamericana- Grupo 9")
     # PREGUNTA 1:
-    st.subheader("1.PAQUETES ENVIADOS Y GANANCIA POR CIUDAD")
+    st.subheader("1. PAQUETES ENVIADOS Y GANANCIA POR CIUDAD")
 
     accion = st.menu_button("Selecciona una ciudad",options=ciudades(archivo_csv))
     
@@ -76,7 +76,7 @@ def main():
 
     # --------------------------------------------------------------
     # PREGUNTA 5:
-    st.subheader("5.SUBCATEGORIA MAS VENDIDA")
+    st.subheader("5. SUBCATEGORIA MAS VENDIDA")
     
     subcategoria = st.radio(
         "Selecciona una categoria:",
