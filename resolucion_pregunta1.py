@@ -1,5 +1,5 @@
 
-def ciudades(dataset):
+def ciudades(dataset : dict)->list[str]:
     '''
     Esta funcion recibe un dataset, representado como un diccionario donde las claves son enteros y los valores son diccionarios
     que representan a cada fila del dataset, y devuelve una lista de strings que representa a todas las ciudades que hay en el dataset
