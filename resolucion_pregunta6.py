@@ -1,4 +1,4 @@
-# Importamos las funciones necesarias de matplotlib para poder hacer el grafico de barras:
+# Importamos las funciones necesarias de matplotlib para poder hacer el grafico torta:
 import matplotlib.pyplot as plt
 
 
