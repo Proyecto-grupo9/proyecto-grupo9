@@ -15,6 +15,50 @@ dataset_prueba = leer_archivo(archivo_prueba)
 archivo_prueba.close()
 
 # -----------------------------------------------------------
+#  TESTING FUNCIONES DEL ARCHIVO: "leer_archivo.py"
+# -----------------------------------------------------------
+def test_crear_diccionario_interno():
+    assert crear_diccionario_interno([]) == {}
+    assert crear_diccionario_interno(["Second Class","Consumer","United States","Henderson","Kentucky","42420","South","Furniture",
+    "Bookcases","261.96","2","0","41.9136","37.836111","-87.59"]) == {"Ship Mode":"Second Class","Segment":"Consumer","City":"Henderson","State":"Kentucky",
+    "Region":"South","Category":"Furniture","Sub-Category":"Bookcases","Sales":"261.96","Quantity":"2",
+    "Profit":"41.9136","Latitude":"37.836111","Longitude":"-87.59"}
+
+def test_leer_archivo():
+    with open("ArchivoParaTesting.csv") as archivo:
+        resultado = leer_archivo(archivo)
+
+    assert resultado == [{"Ship Mode":"Second Class","Segment":"Consumer","City":"Henderson","State":"Kentucky",
+    "Region":"South","Category":"Furniture","Sub-Category":"Bookcases","Sales":"261.96","Quantity":"2",
+    "Profit":"41.9136","Latitude":"37.836111","Longitude":"-87.59"},
+    {"Ship Mode":"Second Class","Segment":"Consumer","City":"Henderson","State":"Kentucky",
+    "Region":"South","Category":"Furniture","Sub-Category":"Chairs","Sales":"731.94","Quantity":"3",
+    "Profit":"219.582","Latitude":"37.836111","Longitude":"-87.59"},
+    {"Ship Mode":"Second Class","Segment":"Corporate","City":"Los Angeles","State":"California",
+    "Region":"West","Category":"Office Supplies","Sub-Category":"Labels","Sales":"14.62","Quantity":"2",
+    "Profit":"6.8714","Latitude":"33.973093","Longitude":"-118.247896"},
+    {"Ship Mode":"Standard Class","Segment":"Consumer","City":"Fort Lauderdale","State":"Florida",
+    "Region":"South","Category":"Furniture","Sub-Category":"Tables","Sales":"957.5775","Quantity":"5",
+    "Profit":"-383.031","Latitude":"26.121561","Longitude":"-80.128778"},
+    {"Ship Mode":"Standard Class","Segment":"Consumer","City":"Fort Lauderdale","State":"Florida",
+    "Region":"South","Category":"Office Supplies","Sub-Category":"Storage","Sales":"22.368","Quantity":"2",
+    "Profit":"2.5164","Latitude":"26.121561","Longitude":"-80.128778"},
+    {"Ship Mode":"Standard Class","Segment":"Consumer","City":"Los Angeles","State":"California",
+    "Region":"West","Category":"Furniture","Sub-Category":"Furnishings","Sales":"48.86","Quantity":"7",
+    "Profit":"14.1694","Latitude":"33.973093","Longitude":"-118.247896"},
+    {"Ship Mode":"Standard Class","Segment":"Consumer","City":"Los Angeles","State":"California",
+    "Region":"West","Category":"Office Supplies","Sub-Category":"Art","Sales":"7.28","Quantity":"4",
+    "Profit":"1.9656","Latitude":"33.973093","Longitude":"-118.247896"},
+    {"Ship Mode":"Standard Class","Segment":"Consumer","City":"Los Angeles","State":"California",
+    "Region":"West","Category":"Technology","Sub-Category":"Phones","Sales":"907.152","Quantity":"6",
+    "Profit":"90.7152","Latitude":"33.973093","Longitude":"-118.247896"},
+    {"Ship Mode":"Standard Class","Segment":"Consumer","City":"Los Angeles","State":"California",
+    "Region":"West","Category":"Office Supplies","Sub-Category":"Binders","Sales":"18.504","Quantity":"3",
+    "Profit":"5.7825","Latitude":"33.973093","Longitude":"-118.247896"}]
+    
+
+
+# -----------------------------------------------------------
 #  TESTING FUNCIONES DEL ARCHIVO: "funciones_auxiliares.py"
 # -----------------------------------------------------------
 def test_lista_palabras():
