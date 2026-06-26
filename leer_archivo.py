@@ -1,6 +1,13 @@
 import csv
 
-def crear_diccionario_interno(fila):
+def crear_diccionario_interno(fila : list[str])-> dict:
+    '''
+    Esta funcion recibe una fila (lista de strings), donde los strings
+    representan los valores de la fila de un dataset y 
+    devuelve una diccionario, donde las claves son los titulos de las columnas del dataset y 
+    los valores el string de la fila que le corresponde a cada columna
+    crear_diccionario_interno() ==
+    '''
 
     indice = 0
 
@@ -10,8 +17,8 @@ def crear_diccionario_interno(fila):
     diccionaro_interno = {}
 
     for valor in fila:
-
-        diccionaro_interno[columnas[indice]] = fila[indice]
+        if (indice != 2) and (indice != 5) and (indice != 11):
+            diccionaro_interno[columnas[indice]] = fila[indice]
         indice+=1
     return diccionaro_interno
 
