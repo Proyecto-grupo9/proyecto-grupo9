@@ -14,7 +14,22 @@ dataset_prueba = leer_archivo(archivo_prueba)
 
 archivo_prueba.close()
 
+# -----------------------------------------------------------
+# TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta1.py"
+# -----------------------------------------------------------
+def test_ciudades():
+    assert ciudades([]) == []
+    assert ciudades(dataset_prueba) == ["Henderson","Los Angeles","Fort Lauderdale"]
+
+def test_ventas_ganancia():
+    assert ventas_ganancias("Los Angeles",[]) == (0,0.0)
+    assert ventas_ganancias("",leer_archivo(open("ArchivoParaTesting.csv"))) == (0,0.0)
+    assert ventas_ganancias("Henderson",leer_archivo(open("ArchivoParaTesting.csv"))) == (5,261.4956)
+
+    
+# -----------------------------------------------------------
 # TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta4.py"
+# -----------------------------------------------------------
 def test_diccionario_ciudad():
     assert diccionario_ciudad([]) == {}
     assert diccionario_ciudad(dataset_prueba) == {"Henderson":993.9,"Los Angeles":996.416,"Fort Lauderdale":979.9455}
@@ -29,7 +44,9 @@ def test_ganancias_region():
     ganancias_region(dataset_prueba) == {"South":-119.019,"West":119.5041}
 
 
+# -----------------------------------------------------------
 # TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta5.py"
+# -----------------------------------------------------------
 def test_subcategoria_mas_vendida():
     assert subcategoria_mas_vendida({}) == {"":0}
     assert subcategoria_mas_vendida({"Bookcases":0,"Chairs":321,"Tables":12}) == {"Chairs":321}
@@ -53,8 +70,11 @@ def test_mayor_subcategoria():
     assert mayor_subcategoria("Office Supplies",dataset_prueba) == "La subcategoria mas vendida es: Art y la cantidad de ventas es: 4"
     assert mayor_subcategoria("",dataset_prueba) == ""
 
-# TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta6.py"
 
+
+# -----------------------------------------------------------
+# TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta6.py"
+# -----------------------------------------------------------
 def test_cuenta_segments():
     assert cuenta_segments([]) == {}
     assert cuenta_segments(dataset_prueba) == {"Consumer":32, "Corporate": 2}

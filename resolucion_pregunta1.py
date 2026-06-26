@@ -5,7 +5,7 @@ def ciudades(dataset : list[dict])->list[str]:
     que representan a cada fila del dataset, y devuelve una lista de strings que representa a todas las ciudades que hay en el dataset
     Ejemplos;
     ciudades([]) == []
-    ciudades() ==
+    ciudades(leer_archivo(open("ArchivoParaTesting.csv"))) == ["Henderson","Los Angeles","Fort Lauderdale"]
     '''
     ciudades : list[str] = []
 
@@ -26,9 +26,9 @@ def ventas_ganancias(ciudad:str,database : list[dict])->tuple:
     Esta función se diseñó para calcular las ventas destinadas a una ciudad
     específica y las ganancias que generaron las mismas.
     Ejemplos;
-    test_ventas_ganancias( ):
-    test_ventas_ganancias( ):
-    test_ventas_ganancias( ):
+    ventas_ganancias("Los Angeles",[]) == (0,0.0)
+    ventas_ganancias("",leer_archivo(open("ArchivoParaTesting.csv"))) == (0,0.0)
+    ventas_ganancias("Henderson",leer_archivo(open("ArchivoParaTesting.csv"))) == (5,261.4956)
     '''
     contador_quantity : int = 0
     ganancias : float = 0.0
@@ -37,4 +37,4 @@ def ventas_ganancias(ciudad:str,database : list[dict])->tuple:
             contador_quantity = contador_quantity + int(fila["Quantity"])
             ganancias += float(fila["Profit"])
 
-    return (contador_quantity,round(ganancias,2))
+    return (contador_quantity,round(ganancias,4))
