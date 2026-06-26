@@ -31,7 +31,7 @@ def contador_subcategoria_furniture(database:list[dict])-> dict:
     (bookcases, chairs, tables y furnishings) de la categoría Furniture, para luego conocer cuál fue la que tuvo más
     ventas.
     Ejemplos:
-    contador_subcategoria_furniture({}) == {"":0}
+    contador_subcategoria_furniture([]) == {"":0}
     contador_subcategoria_furniture(leer_archivo(open("ArchivoParaTesting.csv"))) == {"Furnishings":7}
     '''
     subcategorias : dict = cuenta_cantidades_subcategorias(database,"Furniture","Sub-Category","Quantity")
@@ -46,7 +46,7 @@ def contador_subcategoria_technology(database:list[dict])-> dict:
     (phones y accessories) de la categoría Technology, para luego conocer cuál fue la que tuvo más
     ventas.
     Ejemplos:
-    contador_subcategoria_technology({}) == {"":0}
+    contador_subcategoria_technology([]) == {"":0}
     contador_subcategoria_technology(leer_archivo(open("ArchivoParaTesting.csv"))) == {"Phones":6}
     '''
     subcategorias : dict = cuenta_cantidades_subcategorias(database,"Technology","Sub-Category","Quantity")
@@ -62,7 +62,7 @@ def contador_subcategoria_officesupplies(database:list[dict])-> dict:
     (storage, art, labels, binders, appliances, paper, envelopes y fasteners) de la categoría Office Supplies, para luego 
     conocer cuál fue la que tuvo más ventas.
     Ejemplos:
-    contador_subcategoria_officesupplies({}) == {"":0}
+    contador_subcategoria_officesupplies([]) == {"":0}
     contador_subcategoria_officesupplies(leer_archivo(open("ArchivoParaTesting.csv"))) == {"Art":4}
     '''
     subcategorias = cuenta_cantidades_subcategorias(database,"Office Supplies","Sub-Category","Quantity")

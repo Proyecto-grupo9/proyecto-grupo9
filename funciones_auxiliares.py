@@ -7,7 +7,7 @@ def cuenta_cantidades_enteras(database : list[dict],clave1 : str, clave2 : str)-
     y devuelve un diccionario, donde la clave es un string (que representa a la clave1) y
     el valor es la cantidad de clave2 que le corresponde a la clave1
     estados_paquetes({},"State","Quantity") == {}
-    estados_paquetes(ArchivoParaTesting.csv,"City","Quantity") == {"Henderson":5,"Los Angeles":24,"Fort Lauderdale":7}
+    estados_paquetes(ArchivoParaTesting.csv,"City","Quantity") == {"Henderson":5,"Los Angeles":22,"Fort Lauderdale":7}
     '''
     cantidades = {}
 
@@ -37,12 +37,13 @@ def cuenta_cantidades_float(database : list[dict],clave1 : str, clave2 : str)->d
 
     for fila in database:
         palabra : str = fila[clave1]
-        cantidad : float = float(fila[clave2])
+        cantidad : float = round(float(fila[clave2]),4)
 
         if palabra not in cantidades:
             cantidades[palabra] = cantidad
         else:
             cantidades[palabra] += cantidad
+            cantidades[palabra] = round(cantidades[palabra],4)
             
     return cantidades
 

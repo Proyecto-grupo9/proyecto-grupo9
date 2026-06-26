@@ -8,7 +8,7 @@ def cuenta_segments(database : list[dict])->dict:
     la función toma un data_set, es decir, un diccionario donde las claves son enteros y los valores son diccionarios
     que representa a cada fila del data_set, y devuelve un diccionario donde las claves son los segmentos y los valores son
     la cantidad de ventas que se realizo a cada segmento.
-    cuenta_segments({}) == {}
+    cuenta_segments([]) == {}
     cuenta_segments(leer_archivo(open("ArchivoParaTestingopen.csv"))) == {"Consumer":34}
     '''
     cantidades : dict = cuenta_cantidades_enteras(database,"Segment","Quantity")

@@ -14,6 +14,21 @@ dataset_prueba = leer_archivo(archivo_prueba)
 
 archivo_prueba.close()
 
+# TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta4.py"
+def test_diccionario_ciudad():
+    assert diccionario_ciudad([]) == {}
+    assert diccionario_ciudad(dataset_prueba) == {"Henderson":993.9,"Los Angeles":996.416,"Fort Lauderdale":979.9455}
+
+def test_mayor_sales():
+    assert mayor_sales({}) == ("",0)
+    assert mayor_sales({"Henderson":0,"Los Angeles":0,"Fort Lauderdale":0}) == ("",0)
+    assert mayor_sales({"Henderson":993.9,"Los Angeles":996.416,"Fort Lauderdale":979.9455}) == ("Los Angeles",996.416)
+
+def test_ganancias_region():
+    ganancias_region([]) == {}
+    ganancias_region(dataset_prueba) == {"South":-119.019,"West":119.5041}
+
+
 # TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta5.py"
 def test_subcategoria_mas_vendida():
     assert subcategoria_mas_vendida({}) == {"":0}
@@ -21,15 +36,15 @@ def test_subcategoria_mas_vendida():
     assert subcategoria_mas_vendida({"Bookcases":0,"Chairs":0,"Tables":0}) == {"":0}
 
 def test_contador_subcategoria_furniture():
-    assert contador_subcategoria_furniture({}) == {"":0}
+    assert contador_subcategoria_furniture([]) == {"":0}
     assert contador_subcategoria_furniture(dataset_prueba) == {"Furnishings":7}
 
 def test_contador_subcategoria_technology():
-    assert contador_subcategoria_technology({}) == {"":0}
+    assert contador_subcategoria_technology([]) == {"":0}
     assert contador_subcategoria_technology(dataset_prueba) == {"Phones":6}
 
 def test_contador_subcategoria_officesupplies():
-    assert contador_subcategoria_officesupplies({}) == {"":0}
+    assert contador_subcategoria_officesupplies([]) == {"":0}
     assert contador_subcategoria_officesupplies(dataset_prueba) == {"Art":4}
 
 def test_mayor_subcategoria():
@@ -41,7 +56,7 @@ def test_mayor_subcategoria():
 # TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta6.py"
 
 def test_cuenta_segments():
-    assert cuenta_segments({}) == {}
+    assert cuenta_segments([]) == {}
     assert cuenta_segments(dataset_prueba) == {"Consumer":32, "Corporate": 2}
 
 def test_division_para_porcentaje():   
