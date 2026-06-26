@@ -16,16 +16,19 @@ def main():
     '''
 
     '''
-    archivo_csv = leer_archivo()
+    data_set = open("SampleSuperstore_geo.csv")
+    archivo_csv = leer_archivo(data_set)
 
+    data_set.close()
 
-    # --------------------------------------------------------------
     st.title("Proyecto Superstore Norteamericana- Grupo 9")
+    
+    # --------------------------------------------------------------
     # PREGUNTA 1:
     st.subheader("1. PAQUETES ENVIADOS Y GANANCIA POR CIUDAD")
 
-    accion = st.menu_button("Selecciona una ciudad",options=ciudades(archivo_csv))
-    
+    accion = st.selectbox("Selecciona una ciudad",options=ciudades(archivo_csv))
+
     cantidad_de_paquetes,ganancias = ventas_ganancias(accion,archivo_csv)
 
     tabla = {

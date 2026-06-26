@@ -1,27 +1,16 @@
 # Importamos las funciones necesarias de matplotlib para poder hacer el grafico torta:
 import matplotlib.pyplot as plt
+# Importamos las funciones auxiliares
+from funciones_auxiliares import * 
 
-
-def cuenta_segments(database : dict)->dict:
+def cuenta_segments(database : list[dict])->dict:
     '''
     la función toma un data_set, es decir, un diccionario donde las claves son enteros y los valores son diccionarios
     que representa a cada fila del data_set, y devuelve un diccionario donde las claves son los segmentos y los valores son
     la cantidad de ventas que se realizo a cada segmento.
     cuenta_segments({}) == {}
     '''
-    cantidades : dict = {}
-
-    for clave in database:
-
-        fila : dict = database[clave]
-        segment : str = fila["Segment"]
-        quantity : int = int(fila["Quantity"])
-
-        if segment not in cantidades:
-
-            cantidades[segment] = quantity
-
-        else: cantidades[segment] += quantity
+    cantidades : dict = cuenta_cantidades_enteras(database,"Segment","Quantity")
 
     return cantidades
 
@@ -82,10 +71,9 @@ def segment_y_cantidad(segmentos:dict)->list:
 
 
 
-def genera_grafico(database : dict):
+def genera_grafico(database : list[dict]):
     '''
-    la función toma un data_set, es decir, un diccionario donde las claves son enteros y los valores son diccionarios
-    que representa a cada fila del data_set, para generar un grafico de barras utilizando las funciones: plt.subplots(), ax.pie() de matplotlib
+    la función toma un data_set, y genera un grafico de barras utilizando las funciones: plt.subplots(), ax.pie() de matplotlib
     
     '''
     segments : dict = cuenta_segments(database)
@@ -97,3 +85,4 @@ def genera_grafico(database : dict):
 
     
     return fig
+
