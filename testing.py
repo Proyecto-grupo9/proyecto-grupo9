@@ -26,7 +26,19 @@ def test_ventas_ganancia():
     assert ventas_ganancias("",leer_archivo(open("ArchivoParaTesting.csv"))) == (0,0.0)
     assert ventas_ganancias("Henderson",leer_archivo(open("ArchivoParaTesting.csv"))) == (5,261.4956)
 
-    
+
+# -----------------------------------------------------------
+# TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta2.py"
+# -----------------------------------------------------------
+def test_estados_paquetes():
+    assert estados_paquetes([]) == {}
+    assert estados_paquetes(leer_archivo(open("ArchivoParaTesting.csv"))) == {"Kentucky":5,"California":22,"Florida":7}
+
+def test_estado_que_mas_recibio():
+    assert estado_que_mas_recibio({}) == ["",0]
+    assert estado_que_mas_recibio({"Kentucky":5,"California":22,"Florida":7}) == ["California",22]
+    assert estado_que_mas_recibio({"Kentucky":0,"California":0,"Florida":0}) == ["",0]
+
 # -----------------------------------------------------------
 # TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta4.py"
 # -----------------------------------------------------------
