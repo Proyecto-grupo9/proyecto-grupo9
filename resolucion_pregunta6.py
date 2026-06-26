@@ -9,6 +9,7 @@ def cuenta_segments(database : list[dict])->dict:
     que representa a cada fila del data_set, y devuelve un diccionario donde las claves son los segmentos y los valores son
     la cantidad de ventas que se realizo a cada segmento.
     cuenta_segments({}) == {}
+    cuenta_segments(leer_archivo(open("ArchivoParaTestingopen.csv"))) == {"Consumer":34}
     '''
     cantidades : dict = cuenta_cantidades_enteras(database,"Segment","Quantity")
 
@@ -17,11 +18,12 @@ def cuenta_segments(database : list[dict])->dict:
 
 def division_para_porcentaje(valor : int, total : int)-> int:
     '''
-    la funcion toma dos numeros enteros (valor y total) y devuelve el resultado de redondear la division de valor entre total.
+    la funcion toma dos numeros enteros (valor y total) y devuelve el resultado de redondear la division de valor * 100 entre total
+    que seria aplicar la regla de 3 simple para calcular el porcentaje.
     division_para_porcentaje(12,0) == 0
-    division_para_porcentaje(12,4) == 3
-    division_para_porcentaje(13,4) == 3
-    division_para_porcentaje(7,4) == 2
+    division_para_porcentaje(12,4) == 400
+    division_para_porcentaje(4,13) == 31
+    division_para_porcentaje(4,7) == 57
     '''
     if total == 0:
         resultado : int = 0
@@ -36,7 +38,7 @@ def calcula_porcentaje(segmentos : dict)->list:
     '''
     esta funcion recibe un diccionario, donde las claves son strings que representan a los segmentos y los valores
     son numeros enteros que representan la cantidad de ventas que se realizaron a cada segmento. Y devuelve una lista donde sus elementos son
-    el porcentaje de ventas que se realizaron a cada segmento, este porcentaje se calcula con una regla de 3 simple,
+    el porcentaje de ventas que se realizaron a cada segmento,
     donde total es un entero que representa al total de las ventas realizadas (i,e: el 100% de las ventas)
     calcula_porcentaje({"Consumer":3,"Corporate":6,"Home Office":1}) == [30,60,10]
     calcula_porcentaje({}) == []
@@ -74,7 +76,9 @@ def segment_y_cantidad(segmentos:dict)->list:
 def genera_grafico(database : list[dict]):
     '''
     la función toma un data_set, y genera un grafico de barras utilizando las funciones: plt.subplots(), ax.pie() de matplotlib
-    
+    genera_grafico(leer_archivo(open(ArchivoParaTesting.csv))) == deberia generar un archivo de barras con dos secciones, una 
+    correspondiente a un 96% del grafico con titulo "Consumer" y la otra seccion, correspondiente
+    al 6% con el titulo "Corporate"
     '''
     segments : dict = cuenta_segments(database)
     nombres : list[str] = segment_y_cantidad(segments)

@@ -7,9 +7,9 @@ def subcategoria_mas_vendida(diccionario : dict)->dict:
     (que representan la cantidad de ventas de cada subcategoria), y devuelve un diccionario donde la clave es la subcategoria mas vendida
     y el valor es la cantidad de ventas de esta
     Ejemplos:
-    subcategoria_mas_vendida( ):
-    subcategoria_mas_vendida( ):
-    subcategoria_mas_vendida( ):
+    subcategoria_mas_vendida({}) == {"":0}
+    subcategoria_mas_vendida({"Bookcases":0,"Chairs":321,"Tables":12}) == {"Chairs":321}:
+    subcategoria_mas_vendida({"Bookcases":0,"Chairs":0,"Tables":0}) == {"":0}:
     '''
     subcategoria_mas_vendida : dict = {}
     valor_mayor : int = 0
@@ -31,9 +31,8 @@ def contador_subcategoria_furniture(database:list[dict])-> dict:
     (bookcases, chairs, tables y furnishings) de la categoría Furniture, para luego conocer cuál fue la que tuvo más
     ventas.
     Ejemplos:
-    contador_subcategoria_furniture( ):
-    contador_subcategoria_furniture( ):
-    contador_subcategoria_furniture( ):
+    contador_subcategoria_furniture({}) == {"":0}
+    contador_subcategoria_furniture(leer_archivo(open("ArchivoParaTesting.csv"))) == {"Furnishings":7}
     '''
     subcategorias : dict = cuenta_cantidades_subcategorias(database,"Furniture","Sub-Category","Quantity")
 
@@ -47,9 +46,8 @@ def contador_subcategoria_technology(database:list[dict])-> dict:
     (phones y accessories) de la categoría Technology, para luego conocer cuál fue la que tuvo más
     ventas.
     Ejemplos:
-    contador_subcategoria_technology( ):
-    contador_subcategoria_technology( ):
-    contador_subcategoria_technology( ):
+    contador_subcategoria_technology({}) == {"":0}
+    contador_subcategoria_technology(leer_archivo(open("ArchivoParaTesting.csv"))) == {"Phones":6}
     '''
     subcategorias : dict = cuenta_cantidades_subcategorias(database,"Technology","Sub-Category","Quantity")
     
@@ -64,9 +62,8 @@ def contador_subcategoria_officesupplies(database:list[dict])-> dict:
     (storage, art, labels, binders, appliances, paper, envelopes y fasteners) de la categoría Office Supplies, para luego 
     conocer cuál fue la que tuvo más ventas.
     Ejemplos:
-    contador_subcategoria_officesupplies( ):
-    contador_subcategoria_officesupplies( ):
-    contador_subcategoria_officesupplies( ):
+    contador_subcategoria_officesupplies({}) == {"":0}
+    contador_subcategoria_officesupplies(leer_archivo(open("ArchivoParaTesting.csv"))) == {"Art":4}
     '''
     subcategorias = cuenta_cantidades_subcategorias(database,"Office Supplies","Sub-Category","Quantity")
 
@@ -80,9 +77,13 @@ def mayor_subcategoria(categoria:str,data_base:list[dict])-> str:
     Esta función fue hecha para que, dado un diccionario, devuelva cuantas ventas hubo de, y cuál es, la 
     subcategoría más vendida de una categoría elegida.
     Ejemplos:
-    test_mayor_subcategoria( ):
-    test_mayor_subcategoria( ):
-    test_mayor_subcategoria( ):
+    mayor_subcategoria("Furniture",leer_archivo(open("ArchivoParaTesting.csv"))) == 
+    "La subcategoria mas vendida es: Furnishings y la cantidad de ventas es: 7"
+    mayor_subcategoria("Technology",leer_archivo(open("ArchivoParaTesting.csv"))) == 
+    "La subcategoria mas vendida es: Phones y la cantidad de ventas es: 6"
+    mayor_subcategoria("Office Supplies",leer_archivo(open("ArchivoParaTesting.csv"))) ==
+    "La subcategoria mas vendida es: Art y la cantidad de ventas es: 4"
+    mayor_subcategoria("",leer_archivo(open("ArchivoParaTesting.csv"))) == ""
     '''
     retorno : str = ""
     if categoria == "Furniture":
@@ -91,6 +92,8 @@ def mayor_subcategoria(categoria:str,data_base:list[dict])-> str:
         subcategoria : dict = contador_subcategoria_officesupplies(data_base)
     elif categoria == "Technology":
         subcategoria : dict = contador_subcategoria_technology(data_base)
+    else:
+        subcategoria : dict = {}
 
     for clave in subcategoria:
         retorno = "La subcategoria mas vendida es: "+clave+" y la cantidad de ventas es: "+str(subcategoria[clave])
