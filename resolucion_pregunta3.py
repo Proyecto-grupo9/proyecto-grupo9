@@ -1,3 +1,5 @@
+from funciones_auxiliares import *
+
 def contar_envios(database : list[dict], estado : str)->dict:
     '''
     Estado: es un string que representa un Estado de USA.
@@ -7,9 +9,11 @@ def contar_envios(database : list[dict], estado : str)->dict:
     muestra cuantos envíos se hicieron por Standar Class, cuantos por First Class, cuantos por Second
     Class y cuantos por Same Day.
     Ejemplos:
-    test_contar_envios( ):
-    test_contar_envios( ):
-    test_contar_envios( ):
+    contar_envios([],"California") == {'Standard Class': 0, 'First Class': 0, 'Second Class': 0, 'Same Day': 0}
+    contar_envios(leer_archivo(open("ArchivoParaTesting.csv")),"") == 
+    {'Standard Class': 0, 'First Class': 0, 'Second Class': 0, 'Same Day': 0}
+    contar_envios(leer_archivo(open("ArchivoParaTesting.csv")),"California") ==
+    {'Standard Class': 4, 'First Class': 0, 'Second Class': 1, 'Same Day': 0}
     '''
     cantidades : dict = {'Standard Class': 0, 'First Class': 0, 'Second Class': 0, 'Same Day': 0}
 
@@ -31,15 +35,11 @@ def lista_estados_disponibles(database : list[dict])->list[str]:
     La función fue diseñada para obtener los Estados nombrados en la tabla de la 
     superstore.
     Ejemplos:
-    test_lista_estados_disponibles( ):
-    test_lista_estados_disponibles( ):
-    test_lista_estados_disponibles( ):
+    lista_estados_disponibles([]) == []
+    lista_estados_disponibles(leer_archivo(open("ArchivoParaTesting.csv"))) == ["Kentucky","California","Florida"]
+
     '''
-    estados_disponibles : list[str] = []
-    for fila in database:
-        state : str = fila["State"]
-        if state not in estados_disponibles:
-            estados_disponibles.append(state)
+    estados_disponibles : list[str] = lista_palabras(database,"State")
     return estados_disponibles
 
 def lat_lon_estado(database : list[dict],estado : str)->dict:
@@ -47,9 +47,9 @@ def lat_lon_estado(database : list[dict],estado : str)->dict:
     La función recibe un database y un Estado y devuelve las coordenadas de el mismo.
     Diseñamos esta función para saber las latitudes y longitudes de cada Estado
     Ejemplos:
-    test_lat_lon_estado( ):
-    test_lat_lon_estado( ):
-    test_lat_lon_estado( ):
+    lat_lon_estado()
+    lat_lon_estado()
+    lat_lon_estado()
     '''
     coordenadas : dict = {}
     for fila in database:

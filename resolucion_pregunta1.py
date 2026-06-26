@@ -1,3 +1,5 @@
+from funciones_auxiliares import *
+
 
 def ciudades(dataset : list[dict])->list[str]:
     '''
@@ -7,12 +9,7 @@ def ciudades(dataset : list[dict])->list[str]:
     ciudades([]) == []
     ciudades(leer_archivo(open("ArchivoParaTesting.csv"))) == ["Henderson","Los Angeles","Fort Lauderdale"]
     '''
-    ciudades : list[str] = []
-
-    for fila in dataset:
-        ciudad = fila["City"]
-        if ciudad not in ciudades:
-            ciudades.append(ciudad)
+    ciudades : list[str] = lista_palabras(dataset,"City")
 
     return ciudades
 

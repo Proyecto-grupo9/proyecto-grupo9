@@ -15,7 +15,27 @@ dataset_prueba = leer_archivo(archivo_prueba)
 archivo_prueba.close()
 
 # -----------------------------------------------------------
-# TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta1.py"
+#  TESTING FUNCIONES DEL ARCHIVO: "funciones_auxiliares.py"
+# -----------------------------------------------------------
+def test_lista_palabras():
+    assert lista_palabras([],"City") == []
+    assert lista_palabras(leer_archivo(open("ArchivoParaTesting.csv")),"City") == ["Henderson","Los Angeles","Fort Lauderdale"]
+    assert lista_palabras(leer_archivo(open("ArchivoParaTesting.csv")),"State") == ["Kentucky","California","Florida"]
+
+def test_cuenta_cantidades_enteras():
+    assert cuenta_cantidades_enteras({},"State","Quantity") == {}
+    assert cuenta_cantidades_enteras(dataset_prueba,"City","Quantity") == {"Henderson":5,"Los Angeles":22,"Fort Lauderdale":7}
+
+def test_cuenta_cantidades_float():
+    assert cuenta_cantidades_float({},"Ship Mode","Sales") == {}
+    assert cuenta_cantidades_float(dataset_prueba,"Ship Mode","Sales") == {"Second Class": 1008.52,"Standard Class": 1961.7415}
+
+def test_cuenta_cantidades_subcategorias():
+    assert cuenta_cantidades_subcategorias({},"Furniture","Sub-Category","Quantity") == {}
+    assert cuenta_cantidades_subcategorias(dataset_prueba,"Furniture","Sub-Category","Quantity") == {"Bookcases": 2,"Chairs": 3,"Tables": 5,"Furnishings": 7}
+
+# -----------------------------------------------------------
+#  TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta1.py"
 # -----------------------------------------------------------
 def test_ciudades():
     assert ciudades([]) == []
@@ -28,7 +48,7 @@ def test_ventas_ganancia():
 
 
 # -----------------------------------------------------------
-# TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta2.py"
+#  TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta2.py"
 # -----------------------------------------------------------
 def test_estados_paquetes():
     assert estados_paquetes([]) == {}
@@ -39,8 +59,22 @@ def test_estado_que_mas_recibio():
     assert estado_que_mas_recibio({"Kentucky":5,"California":22,"Florida":7}) == ["California",22]
     assert estado_que_mas_recibio({"Kentucky":0,"California":0,"Florida":0}) == ["",0]
 
+
 # -----------------------------------------------------------
-# TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta4.py"
+#  TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta3.py"
+# -----------------------------------------------------------
+def test_contar_envio():
+    assert contar_envios([],"California") == {'Standard Class': 0, 'First Class': 0, 'Second Class': 0, 'Same Day': 0}
+    assert contar_envios(dataset_prueba,"") == {'Standard Class': 0, 'First Class': 0, 'Second Class': 0, 'Same Day': 0}
+    assert contar_envios(dataset_prueba,"California") == {'Standard Class': 4, 'First Class': 0, 'Second Class': 1, 'Same Day': 0}
+
+def test_lista_estados_disponibles():
+    assert lista_estados_disponibles([]) == []
+    assert lista_estados_disponibles(dataset_prueba) == ["Kentucky","California","Florida"]
+
+
+# -----------------------------------------------------------
+#  TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta4.py"
 # -----------------------------------------------------------
 def test_diccionario_ciudad():
     assert diccionario_ciudad([]) == {}
@@ -57,7 +91,7 @@ def test_ganancias_region():
 
 
 # -----------------------------------------------------------
-# TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta5.py"
+#  TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta5.py"
 # -----------------------------------------------------------
 def test_subcategoria_mas_vendida():
     assert subcategoria_mas_vendida({}) == {"":0}
@@ -85,7 +119,7 @@ def test_mayor_subcategoria():
 
 
 # -----------------------------------------------------------
-# TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta6.py"
+#  TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta6.py"
 # -----------------------------------------------------------
 def test_cuenta_segments():
     assert cuenta_segments([]) == {}
