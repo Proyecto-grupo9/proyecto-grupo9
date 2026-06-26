@@ -47,9 +47,9 @@ def lat_lon_estado(database : list[dict],estado : str)->dict:
     La función recibe un database y un Estado y devuelve las coordenadas de el mismo.
     Diseñamos esta función para saber las latitudes y longitudes de cada Estado
     Ejemplos:
-    lat_lon_estado()
-    lat_lon_estado()
-    lat_lon_estado()
+    lat_lon_estado([],"California") == {}
+    lat_lon_estado(leer_archivo(open("ArchivoParaTesting.csv")),"California") == {"lat":[33.973093],"lon":[-118.247896]}
+
     '''
     coordenadas : dict = {}
     for fila in database:

@@ -34,6 +34,7 @@ def test_cuenta_cantidades_subcategorias():
     assert cuenta_cantidades_subcategorias({},"Furniture","Sub-Category","Quantity") == {}
     assert cuenta_cantidades_subcategorias(dataset_prueba,"Furniture","Sub-Category","Quantity") == {"Bookcases": 2,"Chairs": 3,"Tables": 5,"Furnishings": 7}
 
+
 # -----------------------------------------------------------
 #  TESTING FUNCIONES DEL ARCHIVO: "resolucion_pregunta1.py"
 # -----------------------------------------------------------
@@ -71,6 +72,10 @@ def test_contar_envio():
 def test_lista_estados_disponibles():
     assert lista_estados_disponibles([]) == []
     assert lista_estados_disponibles(dataset_prueba) == ["Kentucky","California","Florida"]
+
+def test_lat_lon_estado():
+    assert lat_lon_estado([],"California") == {}
+    assert lat_lon_estado(dataset_prueba,"California") == {"lat":[33.973093],"lon":[-118.247896]}
 
 
 # -----------------------------------------------------------
