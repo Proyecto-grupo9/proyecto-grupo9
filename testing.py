@@ -63,8 +63,8 @@ def test_leer_archivo():
 # -----------------------------------------------------------
 def test_lista_palabras():
     assert lista_palabras([],"City") == []
-    assert lista_palabras(leer_archivo(open("ArchivoParaTesting.csv")),"City") == ["Henderson","Los Angeles","Fort Lauderdale"]
-    assert lista_palabras(leer_archivo(open("ArchivoParaTesting.csv")),"State") == ["Kentucky","California","Florida"]
+    assert lista_palabras(dataset_prueba,"City") == ["Henderson","Los Angeles","Fort Lauderdale"]
+    assert lista_palabras(dataset_prueba,"State") == ["Kentucky","California","Florida"]
 
 def test_cuenta_cantidades_enteras():
     assert cuenta_cantidades_enteras({},"State","Quantity") == {}
@@ -88,8 +88,8 @@ def test_ciudades():
 
 def test_ventas_ganancia():
     assert ventas_ganancias("Los Angeles",[]) == (0,0.0)
-    assert ventas_ganancias("",leer_archivo(open("ArchivoParaTesting.csv"))) == (0,0.0)
-    assert ventas_ganancias("Henderson",leer_archivo(open("ArchivoParaTesting.csv"))) == (5,261.4956)
+    assert ventas_ganancias("",dataset_prueba) == (0,0.0)
+    assert ventas_ganancias("Henderson",dataset_prueba) == (5,261.4956)
 
 
 # -----------------------------------------------------------
@@ -97,12 +97,12 @@ def test_ventas_ganancia():
 # -----------------------------------------------------------
 def test_estados_paquetes():
     assert estados_paquetes([]) == {}
-    assert estados_paquetes(leer_archivo(open("ArchivoParaTesting.csv"))) == {"Kentucky":5,"California":22,"Florida":7}
+    assert estados_paquetes(dataset_prueba) == {"Kentucky":5,"California":22,"Florida":7}
 
 def test_estado_que_mas_recibio():
-    assert estado_que_mas_recibio({}) == ["",0]
-    assert estado_que_mas_recibio({"Kentucky":5,"California":22,"Florida":7}) == ["California",22]
-    assert estado_que_mas_recibio({"Kentucky":0,"California":0,"Florida":0}) == ["",0]
+    assert estado_que_mas_recibio({}) == ("",0)
+    assert estado_que_mas_recibio({"Kentucky":5,"California":22,"Florida":7}) == ("California",22)
+    assert estado_que_mas_recibio({"Kentucky":0,"California":0,"Florida":0}) == ("",0)
 
 
 # -----------------------------------------------------------

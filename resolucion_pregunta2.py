@@ -10,10 +10,10 @@ def estados_paquetes(database : list[dict])->dict:
     cantidades : dict = cuenta_cantidades_enteras(database, "State","Quantity")
     return cantidades
 
-def estado_que_mas_recibio(cantidades_estados : dict)->list:
+def estado_que_mas_recibio(cantidades_estados : dict)->tuple:
     '''
     Esta funcion recibe un diccionario, donde la clave es un string (que representa a los estados) y
-    el valor es la cantidad de paquetes que recibió cada estado y devuelve una lista, donde estado es el estado que mas paquetes recibio y 
+    el valor es la cantidad de paquetes que recibió cada estado y devuelve una tupla, donde estado es el estado que mas paquetes recibio y 
     valor es la cantidad de paquetes recibidos.
     La funcion calcula cual es el estado que mas paquetes recibió.
     estado_que_mas_recibio({}) == ["",0]
@@ -26,5 +26,5 @@ def estado_que_mas_recibio(cantidades_estados : dict)->list:
         if cantidades_estados[clave] > valor:
             valor = cantidades_estados[clave]
             estado = clave
-    return [estado, valor]
+    return (estado, valor)
 

@@ -41,9 +41,8 @@ def main():
     # --------------------------------------------------------------
     # PREGUNTA 2
     st.subheader("2. El Estado que mas paquetes recibió")
-    nombre_valor = estado_que_mas_recibio(estados_paquetes(archivo_csv))
-    nombre_estado =nombre_valor[0]
-    valor_estado = nombre_valor[1]
+   
+    nombre_estado,valor_estado = estado_que_mas_recibio(estados_paquetes(archivo_csv))
 
     st.success(f"El estado que mas paquetes recibio es **{nombre_estado}** con un total de **{valor_estado}** paquetes recibidos.")
 
